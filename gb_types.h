@@ -1,0 +1,64 @@
+#ifndef GB_TYPES_H
+#define GB_TYPES_H
+
+typedef int gb_bool;
+
+typedef enum {
+	GB_ERROR_OK             = 0,
+	GB_ERROR_CANT_OPEN_FILE = 1,
+	GB_ERROR_UNKNOWN_OPCODE = 2,
+	GB_ERROR_SCREEN_FAILURE = 3,
+} gb_error;
+
+typedef enum {
+	GB_MEMORY_MODE_16_8 = 0,
+	GB_MEMORY_MODE_4_32 = 1,
+} gb_memory_mode;
+
+typedef enum {
+	GB_CARTRIDGE_TYPE_ROM                       = 0x00,
+	GB_CARTRIDGE_TYPE_ROM_MBC1                  = 0x01,
+	GB_CARTRIDGE_TYPE_ROM_MBC1_RAM              = 0x02,
+	GB_CARTRIDGE_TYPE_ROM_MBC1_RAM_BATT         = 0x03,
+	GB_CARTRIDGE_TYPE_ROM_MBC2                  = 0x05,
+	GB_CARTRIDGE_TYPE_ROM_MBC2_BATT             = 0x06,
+	GB_CARTRIDGE_TYPE_ROM_RAM                   = 0x08,
+	GB_CARTRIDGE_TYPE_ROM_RAM_BATT              = 0x09,
+	GB_CARTRIDGE_TYPE_ROM_MMM01                 = 0x0B,
+	GB_CARTRIDGE_TYPE_ROM_MMM01_SRAM            = 0x0C,
+	GB_CARTRIDGE_TYPE_ROM_MMM01_SRAM_BATT       = 0x0D,
+	GB_CARTRIDGE_TYPE_ROM_MBC3_TIMER_BATT       = 0x0F,
+	GB_CARTRIDGE_TYPE_ROM_MBC3_TIMER_RAM_BATT   = 0x10,
+	GB_CARTRIDGE_TYPE_ROM_MBC3                  = 0x11,
+	GB_CARTRIDGE_TYPE_ROM_MBC3_RAM              = 0x12,
+	GB_CARTRIDGE_TYPE_ROM_MBC3_RAM_BATT         = 0x13,
+	GB_CARTRIDGE_TYPE_ROM_MBC5                  = 0x19,
+	GB_CARTRIDGE_TYPE_ROM_MBC5_RAM              = 0x1A,
+	GB_CARTRIDGE_TYPE_ROM_MBC5_RAM_BATT         = 0x1B,
+	GB_CARTRIDGE_TYPE_ROM_MBC5_RUMBLE           = 0x1C,
+	GB_CARTRIDGE_TYPE_ROM_MBC5_RUMBLE_SRAM      = 0x1D,
+	GB_CARTRIDGE_TYPE_ROM_MBC5_RUMBLE_SRAM_BATT = 0x1E,
+} gb_cartridge_type;
+
+typedef enum {
+	GB_ROM_SIZE_256_KBIT = 0x00,
+	GB_ROM_SIZE_512_KBIT = 0x01,
+	GB_ROM_SIZE_1_MBIT   = 0x02,
+	GB_ROM_SIZE_2_MBIT   = 0x03,
+	GB_ROM_SIZE_4_MBIT   = 0x04,
+	GB_ROM_SIZE_8_MBIT   = 0x05,
+	GB_ROM_SIZE_16_MBIT  = 0x06,
+	GB_ROM_SIZE_9_MBIT   = 0x52,
+	GB_ROM_SIZE_10_MBIT  = 0x53,
+	GB_ROM_SIZE_12_MBIT  = 0x54,
+} gb_rom_size;
+
+typedef enum {
+	GB_RAM_SIZE_NONE     = 0x00,
+	GB_RAM_SIZE_16_KBIT  = 0x01,
+	GB_RAM_SIZE_64_KBIT  = 0x02,
+	GB_RAM_SIZE_256_KBIT = 0x03,
+	GB_RAM_SIZE_1_MBIT   = 0x04,
+} gb_ram_size;
+
+#endif
